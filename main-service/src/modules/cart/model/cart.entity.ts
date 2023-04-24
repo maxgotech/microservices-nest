@@ -6,7 +6,7 @@ export class CartEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @OneToOne(type => ProductEntity) @JoinColumn() 
+    @OneToOne(type => ProductEntity,{eager:true}) @JoinColumn() 
     product: ProductEntity;
 
     @Column({nullable:false})
