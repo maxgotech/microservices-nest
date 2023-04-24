@@ -10,7 +10,7 @@ export const toUserDto = (data: UserEntity): UserDto => {
 };
 
 export const toCartDto = (data: CartEntity): CartDto => {  
-    const { id, id_product, id_user } = data;
-    let cartDto: CartDto = { id, id_product, id_user  };
+    const { id, product, id_user } = data;
+    let cartDto: CartDto = { id, product, id_user  };
     return cartDto;
 };

@@ -1,12 +1,13 @@
-import { Column, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, UpdateDateColumn,OneToOne, JoinColumn } from "typeorm";
+import { ProductEntity } from "./product.entity";
 
 @Entity('cart')
 export class CartEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({nullable:false})
-    id_product:number;
+    @OneToOne(type => ProductEntity) @JoinColumn() 
+    product: ProductEntity;
 
     @Column({nullable:false})
     id_user:number;

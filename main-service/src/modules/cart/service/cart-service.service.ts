@@ -17,8 +17,8 @@ export class CartServices {
     }
 
     async create(cartDto: CartCreateDto): Promise<CartDto> {    
-        const { id_product, id_user } = cartDto;   
-        const cart: CartEntity = await this.cartRepo.create({ id_product, id_user });
+        const { product, id_user } = cartDto;   
+        const cart: CartEntity = await this.cartRepo.create({ product, id_user });
         await this.cartRepo.save(cart);
         return toCartDto(cart);
     }
