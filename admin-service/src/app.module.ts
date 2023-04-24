@@ -1,4 +1,3 @@
-import { CartModule } from './../../main-service/src/modules/cart/cart.module';
 import { ProductModule } from './modules/product/product.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
@@ -9,7 +8,6 @@ import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    CartModule,
     ProductModule,
     TypeOrmModule.forRoot(DataOptions),
     ConfigModule.forRoot()
