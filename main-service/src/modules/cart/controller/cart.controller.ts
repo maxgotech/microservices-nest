@@ -17,4 +17,9 @@ export class CartController{
     getCarts(@Body() cartDto:CartDto){
         return this.cartService.CartListByID(cartDto);
     }
+
+    @Post('deletecart')  
+        public async delete(@Body() id: number){
+        return await this.cartService.deleteCart(id);  
+    }
 }

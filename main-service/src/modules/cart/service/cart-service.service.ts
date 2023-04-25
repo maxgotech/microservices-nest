@@ -31,4 +31,12 @@ export class CartServices {
         return CartList;
         }
     }
+    async deleteCart( id ):Promise<CartDto>{
+        if(id==null){
+            return
+        } else{
+            const cartDelete = await this.cartRepo.delete(id);
+            return;
+        }
+    }
 }
