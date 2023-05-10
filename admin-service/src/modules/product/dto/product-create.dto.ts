@@ -6,6 +6,8 @@ export class ProductCreateDto {
 
   url_image:string;
 
+  about:string;
+
   @IsNotEmpty()
   price: number;
 

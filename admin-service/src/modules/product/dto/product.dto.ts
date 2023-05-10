@@ -9,6 +9,8 @@ export class ProductDto {
 
   url_image:string;
 
+  about:string;
+
   @IsNotEmpty()
   price: number;
 

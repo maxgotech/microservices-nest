@@ -17,7 +17,7 @@ export class ProductServices {
     }
 
     async create(productDto: ProductCreateDto): Promise<ProductDto> {    
-        const { name, price , id_createdBy  } = productDto;
+        const { name, price , id_createdBy, url_image, about  } = productDto;
         
         // check if the study exists in the db    
         const productInDb = await this.productRepo.findOne({ 
@@ -27,7 +27,7 @@ export class ProductServices {
             throw new HttpException('Study already exists', HttpStatus.BAD_REQUEST);    
         }
         
-        const product: ProductEntity = await this.productRepo.create({ name, price , id_createdBy });
+        const product: ProductEntity = await this.productRepo.create({ name, price , id_createdBy, url_image, about });
         await this.productRepo.save(product);
         return toProductDto(product);
     }
