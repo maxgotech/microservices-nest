@@ -11,6 +11,9 @@ export class ProductEntity {
     @Column({nullable:true})
     url_image:string;
 
+    @Column({nullable:true})
+    about:string;
+
     @Column({nullable:false})
     price:number;
 
